@@ -1,4 +1,18 @@
-﻿# Azure ServiceBus - local dev/test [⬅️ top](./README.md)
+﻿# Azure development [⬅️ top](./README.md)
+
+## Prerequisites
+[Azure Functions Core Tools](https://github.com/Azure/azure-functions-core-tools) : Local development experience for creating, developing, testing, running, and debugging Azure Functions.
+- ```
+  winget install Microsoft.Azure.FunctionsCoreTools
+  ```
+
+## Articles/Topics
+[Manually run a non HTTP-triggered function](https://learn.microsoft.com/en-us/azure/azure-functions/functions-manually-run-non-http?tabs=azure-portal)
+
+## Issues
+1. In Azure Portal, If you get an error about your token being from the wrong issuer, then you probably are accidentally in the wrong subscription.  Switch it by clicking your profile bubble and choose **Switch Directory**.
+
+## Azure - Local Development with ServiceBus
 
 - ## [Azure Issues - Local development story? #2223](https://github.com/Azure/azure-service-bus/issues/223)
   - EventHub emulator exists

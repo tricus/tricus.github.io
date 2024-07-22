@@ -46,3 +46,30 @@ git reflog
 # Restore the commit to the current branch
 git cherry-pick $hash
 ```
+
+## Catch a branch up to current HEAD of original source branch
+Different options:  
+- Option 1. Merge from original source branch
+   ```bash
+   git pull origin develop
+   ```
+   > This form of `pull` does a `fetch` and a `merge`.
+- Option 2. Rebase current branch onto original source branch
+   ```bash
+   git pull
+   git rebase origin/develop
+   ```
+   > The `pull` gets the latest changes and the `rebase` replays commits on the branch against the new content.
+- Option 3. Rebase during pull
+   ```bash
+   git pull --rebase
+   ```
+   > Performs `fetch` and `rebase`
+
+## Oops, I made a local commit on `main` instead of on a working branch
+
+No problem.  The commit doesn't "belong" to the current branch.  Simply create a new branch: `git switch -c my-working-branch` and the commit will "follow" you there.
+  
+However, the upstream may have been set to `origin/main` so a regular `git push` will fail (due to policy).  Instead use: `git push origin HEAD` to push to the remote with the new branch name.
+
+To fix the upstream remote use: `git branch my-working-branch --set-upstream-to origin/my-working-branch`
