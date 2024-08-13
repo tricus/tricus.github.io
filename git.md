@@ -1,5 +1,64 @@
 ﻿# git [⬅️ top](README.md)
 
+## Convnience script for cloning a repo
+```cmd
+@echo off
+setlocal
+
+REM *** Clone a repo
+REM ***
+REM *** Usage:
+REM ***   Clone to directory with same name:
+REM ***     git-clone
+REM ***   Clone to new directory:
+REM ***     git-clone <directory>
+
+REM *** If repo url contains a % character, it must be double-escaped (i.e. %%%%) because:
+REM *** One substitution happens in the `set repo` line
+REM *** Another substitution happens inside the `:runcmd` subroutine
+set repo=https://<USER>@dev.azure.com/<ORG>/<PROJECT>/_git/<REPO>
+
+REM set cmd=git clone %repo% %1
+REM echo %cmd%
+REM %cmd%
+call :runcmd git clone "%repo%" %1
+if ERRORLEVEL 1 exit /b
+
+set target=%1
+if "%target%" == "" (
+  for %%A in ("%repo%") do (
+    set target=%%~nA
+  )
+)
+cd %target%
+
+call :runcmd git switch develop
+if ERRORLEVEL 1 exit /b
+
+call :runcmd git branch --list
+if ERRORLEVEL 1 exit /b
+
+set /p "branch=Enter name for new branch: "
+if "%branch%" neq "" (
+  call :runcmd git switch -c %branch%
+  if ERRORLEVEL 1 exit /b
+  call :runcmd git branch --list
+  if ERRORLEVEL 1 exit /b
+)
+
+code .
+
+goto :eof
+
+
+REM *** Subroutine to echo and execute stored command text
+:runcmd
+@echo on
+%*
+@echo off
+goto :eof
+```
+
 ## Renaming files/directories
 Use the `mv` command:
 ```bash
