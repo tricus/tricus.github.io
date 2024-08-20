@@ -1,6 +1,7 @@
 ﻿# git [⬅️ top](README.md)
 
-## Convnience script for cloning a repo
+## Convenience script for cloning a repo
+> Save as `%USERPROFILE%\source\repos\git-clone.cmd`
 ```cmd
 @echo off
 setlocal
@@ -59,7 +60,7 @@ REM *** Subroutine to echo and execute stored command text
 goto :eof
 ```
 
-## Renaming files/directories
+## Renaming files/directories (locally)
 Use the `mv` command:
 ```bash
 git mv oldname newname
@@ -73,6 +74,13 @@ git config core.ignorecase false
 git mv specificCasedName tempaname
 git mv tempname SpecificCasedName
 ```
+
+## Renaming a remote branch
+```bash
+git push <remote> <remote>/<old_name>:refs/heads/<new_name> :<old_name>
+```
+> Credit https://stackoverflow.com/a/21302474
+
 
 ## Temporarily preserve changes
 ```bash
@@ -132,3 +140,10 @@ No problem.  The commit doesn't "belong" to the current branch.  Simply create a
 However, the upstream may have been set to `origin/main` so a regular `git push` will fail (due to policy).  Instead use: `git push origin HEAD` to push to the remote with the new branch name.
 
 To fix the upstream remote use: `git branch my-working-branch --set-upstream-to origin/my-working-branch`
+
+## Squash all local commits into one local commit
+```bash
+git reset --soft $(git merge-base main HEAD)
+git commit -m "Commit message for your single commit"
+```
+> Credit https://stackoverflow.com/a/25357146
