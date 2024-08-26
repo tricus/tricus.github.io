@@ -9,6 +9,16 @@
   ```
 [⬆️top](#top)
 
+## *Unauthorized access. 'Listen' claim(s) are required to perform this operation.*
+Or, "*'Send' claim(s) are required to perform this operation.*"
+
+Must add **Azure Service Bus Data Owner** role to user.  **Owner** is not sufficient.
+
+This error can also be triggered by an empty/missing password.
+> https://stackoverflow.com/q/61724021
+
+[⬆️top](#top)
+
 ## Articles/Topics
 [Manually run a non HTTP-triggered function](https://learn.microsoft.com/en-us/azure/azure-functions/functions-manually-run-non-http?tabs=azure-portal)  
 [⬆️top](#top)
