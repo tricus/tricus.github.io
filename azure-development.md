@@ -1,16 +1,22 @@
-﻿# Azure development [⬅️ top](./README.md)
+﻿###### <top>
+[⬅️ toc](./README.md)
+# Azure development
 
 ## Prerequisites
 [Azure Functions Core Tools](https://github.com/Azure/azure-functions-core-tools) : Local development experience for creating, developing, testing, running, and debugging Azure Functions.
 - ```
   winget install Microsoft.Azure.FunctionsCoreTools
   ```
+[⬆️top](#top)
 
 ## Articles/Topics
-[Manually run a non HTTP-triggered function](https://learn.microsoft.com/en-us/azure/azure-functions/functions-manually-run-non-http?tabs=azure-portal)
+[Manually run a non HTTP-triggered function](https://learn.microsoft.com/en-us/azure/azure-functions/functions-manually-run-non-http?tabs=azure-portal)  
+[⬆️top](#top)
 
 ## Issues
 1. In Azure Portal, If you get an error about your token being from the wrong issuer, then you probably are accidentally in the wrong subscription.  Switch it by clicking your profile bubble and choose **Switch Directory**.
+
+[⬆️top](#top)
 
 ## Azure - Local Development with ServiceBus
 
@@ -31,3 +37,5 @@
 
 - ## [DevOpsifyMe - Azure Service Bus Emulator](https://github.com/piotr-rojek/devopsifyme-sbemulator)
   - [Article (devopsifyme.com)](https://devopsifyme.com/simple-azure-service-bus-emulator-finally-here/)
+  
+  [⬆️top](#top)

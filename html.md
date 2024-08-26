@@ -1,4 +1,6 @@
-﻿# HTML [⬅️ top](./README.md)
+﻿###### <top>
+[⬅️ toc](./README.md)
+# HTML
 
 <details>
 <summary>HTML for collapsible section</summary>
@@ -9,3 +11,5 @@
     Content of section
     </details>
 </details>
+
+[⬆️top](#top)

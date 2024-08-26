@@ -1,4 +1,6 @@
-﻿# dotnet CLI
+﻿###### <top>
+[⬅️ toc](./README.md)
+# dotnet CLI
 
 ## Create a new solution
 
@@ -16,6 +18,7 @@ Or, specify output directory (which also acts as name):
 ```cmd
 dotnet new sln --output MySolution
 ```
+[⬆️top](#top)
 
 ## Create a new project
 
@@ -29,6 +32,7 @@ OR, specify output directory:
 ```cmd
 dotnet new classlib --output TheProjectDirectory
 ```
+[⬆️top](#top)
 
 ## Interesting Libraries
 
@@ -42,5 +46,5 @@ dotnet new classlib --output TheProjectDirectory
  
 **vkhorikov/CSharpFunctionalExtensions**: Functional extensions for C# | https://github.com/vkhorikov/CSharpFunctionalExtensions
  
-**ardalis/Result**: A result abstraction that can be mapped to HTTP response codes if needed. | https://github.com/ardalis/Result
- 
+**ardalis/Result**: A result abstraction that can be mapped to HTTP response codes if needed. | https://github.com/ardalis/Result  
+[⬆️top](#top)

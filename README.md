@@ -1,4 +1,4 @@
-﻿### Hey.  Here's some stuff:
+﻿### Hey.  You found https://tricus.github.io/
 
 ## Sites
 - ### [Academic & Scientific References](./academic-references.md)
@@ -22,4 +22,6 @@
 - ### [git](./git.md)
 - ### [HTML](./html.md)
 - ### [LINQPad](./linqpad.md)
+- ### [regex](./regex.md)
+- ### [Samples](https://github.com/tricus/tricus.github.io/tree/main/samples)
 - ### [VSCode](./vscode.md)

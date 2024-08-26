@@ -1,10 +1,28 @@
-﻿###### <top>  
-[⬅️back](./README.md)
+﻿###### <top>
+[⬅️ toc](./README.md)
 # VSCode  
 
 TOC  
 [Get `nuget` package restore working](#get-nuget-package-restore-working)  
 ["Open in VS Code" context menu item in Windows Explorer](#open-in-vs-code-context-menu-item-in-windows-explorer)
+
+## Global Search window: find lines *not containing* pattern
+```regex
+^(?!.*string_to_not_match.*).* string_to_match
+```
+- `^` = start of string  
+- `?!` = negative lookbehind: match text that does not correspond to the following pattern
+- `.*string_to_not_match.*` = avoidant pattern embedded in any other text (or no text)
+- `.*` = anything (or nothing)
+- `string_to_match` = the pattern to match
+
+For example, to find `Assert.ThrowsAsync` that is *not* preceded by `await`:
+```
+^(?!.*await.*).* Assert.ThrowsAsync
+```
+> https://stackoverflow.com/a/77785552
+
+[⬆️top](#top)
 
 ## Get `nuget` package restore working
 - The Azure Artifacts Credential Provider [microsoft/artifacts-credprovider  (github)](https://github.com/microsoft/artifacts-credprovider#azure-artifacts-credential-provider) enables dotnet, NuGet.exe, and MSBuild to interactively acquire credentials for Azure Artifacts feeds.
