@@ -4,10 +4,21 @@
 
 ## Prerequisites
 [Azure Functions Core Tools](https://github.com/Azure/azure-functions-core-tools) : Local development experience for creating, developing, testing, running, and debugging Azure Functions.
-- ```
+- ```cmd
+  # Main installation (gui installer, takes minutes to install)
   winget install Microsoft.Azure.FunctionsCoreTools
+
+  # VSCode extension (???) (no gui, installed in 49 seconds)
+  npm install -g azure-functions-core-tools@4
   ```
 [⬆️top](#top)
+
+## PowerShell `Az` module
+
+### Set default subscription for `Connect-AzAccount`
+- ```pwsh
+  Update-AzConfig -DefaultSubscriptionForLogin 00000000-0000-0000-0000-000000000000
+  ```
 
 ## *Unauthorized access. 'Listen' claim(s) are required to perform this operation.*
 Or, "*'Send' claim(s) are required to perform this operation.*"

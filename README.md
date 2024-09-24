@@ -2,7 +2,7 @@
 
 ## Sites
 - ### [Academic & Scientific References](./academic-references.md)
-- ### AI
+- ### [AI List](./ai.md)
 
 ## Note-Taking
 - [OneMore](https://onemoreaddin.com/):  free OneNote add-in
@@ -22,6 +22,8 @@
 - ### [git](./git.md)
 - ### [HTML](./html.md)
 - ### [LINQPad](./linqpad.md)
+- ### [PowerShell](./powershell.md)
 - ### [regex](./regex.md)
 - ### [Samples](https://github.com/tricus/tricus.github.io/tree/main/samples)
 - ### [VSCode](./vscode.md)
+- ### [Xunit)(./xunit.md)]
