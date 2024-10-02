@@ -63,6 +63,11 @@ goto :eof
 ```
 [⬆️top](#top)
 
+## Useful operations
+|Description|Command|
+|-|-|
+|Show remote upstream branch|`git remote show upstream`|
+
 ## Renaming files/directories (locally)
 Use the `mv` command:
 ```bash
@@ -153,10 +158,17 @@ However, the upstream may have been set to `origin/main` so a regular `git push`
 To fix the upstream remote use: `git branch my-working-branch --set-upstream-to origin/my-working-branch`  
 [⬆️top](#top)
 
-## Squash all local commits into one local commit
+## Squash commits
 ```bash
-git reset --soft $(git merge-base main HEAD)
+ # Choose the branch relative to which you are resetting
+basebranch=main
+ # Move HEAD of current branch back to match $basebranch; effectively, remove all commits.
+ # The index is unchanged, so all files are ready to be committed again.
+git reset --soft $(git merge-base $basebranch HEAD)
+ # Make a single commit with all changes
 git commit -m "Commit message for your single commit"
+# Push to remote; --force option is required because the local branch is now considered "behind" HEAD of the remote branch
+git push --force
 ```
 > Credit https://stackoverflow.com/a/25357146
 
